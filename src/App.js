@@ -2,6 +2,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AboutMe from './pages/AboutMe/AboutMe';
 import Blog from './pages/Blog/Blog';
 import CheckOut from './pages/Home/CheckOut/CheckOut';
 import Footer from './pages/Home/Footer/Footer';
@@ -23,7 +24,8 @@ function App() {
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/services' element={<Services></Services>} ></Route>
         <Route path='/blog' element={<Blog></Blog>} ></Route>
-        <Route path='/' element={<Home></Home>} ></Route>
+        <Route path='/blog' element={<Blog></Blog>} ></Route>
+        <Route path='/about-me' element={<AboutMe></AboutMe>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
         <Route path='/checkout' element={<RequireAuth>
