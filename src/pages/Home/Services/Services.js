@@ -1,11 +1,18 @@
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
 import CardHeader from 'react-bootstrap/esm/CardHeader';
+import { useNavigate } from 'react-router-dom';
 import serviceImg1 from '../../../images/Services-img/s-img-1.jpg'
 import serviceImg2 from '../../../images/Services-img/s-img-2.jpg'
 import serviceImg3 from '../../../images/Services-img/s-img-3.jpg'
 
 const Services = () => {
+    const navigate = useNavigate()
+
+    const handleCheckOut = () =>{
+        navigate('/checkout')
+        
+    }
     return (
         <div className='container my-5'>
             <h2 className='text-center mb-5 text-secondary text-uppercase' >My Services</h2>
@@ -20,7 +27,7 @@ const Services = () => {
                         <Card.Title className='text-center fw-bold'>Price: $700</Card.Title>
                     </Card.Body>
                     <Card.Footer >
-                        <Button variant="primary">Check Out</Button>
+                        <Button onClick={handleCheckOut} variant="primary">Check Out</Button>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -33,7 +40,7 @@ const Services = () => {
                         <Card.Title className='text-center fw-bold'>Price: $900</Card.Title>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary">Check Out</Button>
+                        <Button onClick={handleCheckOut} variant="primary">Check Out</Button>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -46,7 +53,7 @@ const Services = () => {
                         <Card.Title className='text-center fw-bold'>Price: $1200</Card.Title>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary">Check Out</Button>
+                        <Button onClick={handleCheckOut} variant="primary">Check Out</Button>
                     </Card.Footer>
                 </Card>
             </CardGroup>

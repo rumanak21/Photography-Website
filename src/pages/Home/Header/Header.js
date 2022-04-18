@@ -8,8 +8,8 @@ import logo from '../../../images/WPG-Roman.png'
 
 const Header = () => {
     const [user] = useAuthState(auth);
-
-    const handleSignOut = () =>{
+    
+    const handleSignOut = () => {
         signOut(auth);
     }
 
@@ -26,17 +26,21 @@ const Header = () => {
                         <Nav.Link as={Link} to="#about-me">About Me</Nav.Link>
                     </Nav>
                     <Nav className='text-uppercase fs-5 fw-bold '>
-                    {
-                                user ?
+                        {
+                            user ?
+                                <>
+                                    <p className='text-light text-center fw-normal text-lowercase m-2'>{user.email}</p>
                                     <button className='btn btn-link text-white text-decoration-none text-uppercase fs-5 fw-bold' onClick={handleSignOut}>sign out</button>
+                                </>
+
                                 :
                                 <>
-                                <Nav.Link as={Link} to="login">Login</Nav.Link>
-                                <Nav.Link as={Link} to="signup">Sign Up</Nav.Link>
+                                    <Nav.Link as={Link} to="login">Login</Nav.Link>
+                                    <Nav.Link as={Link} to="signup">Sign Up</Nav.Link>
                                 </>
-                               }
-                        
-                        
+                        }
+
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signOut  } from 'firebase/auth';
 import auth from '../../firebase.init'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Modal from './Modal';
+
 
 
 const SignUp = () => {
@@ -18,7 +20,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
       if (loading) {
         return <p>Loading...</p>;
@@ -35,14 +37,20 @@ const SignUp = () => {
         return <p>Loading...</p>;
       }
 
+     
+      
+
     const handleSubmit = (event) => {
         event.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         console.log(email, password)
         createUserWithEmailAndPassword(email, password);
+        
         navigate('/');
     }
+    
+
     return (
         <div className='container w-50 my-5'>
             <Form onSubmit={handleSubmit}>

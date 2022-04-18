@@ -2,6 +2,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import CheckOut from './pages/Home/CheckOut/CheckOut';
 import Footer from './pages/Home/Footer/Footer';
 import Header from './pages/Home/Header/Header';
 import Home from './pages/Home/Home/Home';
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
+        <Route path='/checkout' element={<CheckOut></CheckOut>} ></Route>
       </Routes>
 
     <Footer></Footer>
