@@ -9,6 +9,7 @@ import Home from './pages/Home/Home/Home';
 import Services from './pages/Home/Services/Services';
 import Login from './pages/Login/Login';
 import RequireAuth from './pages/Login/RequireAuth';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 import SignUp from './pages/SignUp/SignUp';
 
 
@@ -28,6 +29,7 @@ function App() {
         </RequireAuth>}
 
         ></Route>
+        <Route path='*' element={<PageNotFound></PageNotFound>} ></Route>
       </Routes>
 
       <Footer></Footer>
