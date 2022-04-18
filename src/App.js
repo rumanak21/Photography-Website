@@ -2,6 +2,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blog from './pages/Blog/Blog';
 import CheckOut from './pages/Home/CheckOut/CheckOut';
 import Footer from './pages/Home/Footer/Footer';
 import Header from './pages/Home/Header/Header';
@@ -19,8 +20,9 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
-        <Route path='/services' element={<Services></Services>} ></Route>
         <Route path='/' element={<Home></Home>} ></Route>
+        <Route path='/services' element={<Services></Services>} ></Route>
+        <Route path='/blog' element={<Blog></Blog>} ></Route>
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
